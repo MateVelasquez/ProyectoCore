@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestionar Registros de Producción</title>
+    <script type="text/javascript">
+        function mostrarInformacion() {
+            var selectElement = document.getElementById("registro_id");
+            var selectedValue = selectElement.options[selectElement.selectedIndex].getAttribute('data-info');
+            var infoDiv = document.getElementById("infoRegistro");
+            infoDiv.innerHTML = "Información del registro seleccionado: " + selectedValue;
+        }
+    </script>
+</head>
+<body>
+    <h2>Gestionar Registro de Producción Diaria</h2>
+
+    {% if mensaje %}
+    <p>{{ mensaje }}</p>
+    {% endif %}
+
+    <form action="/gestionar_registro_produccion" method="post">
+        <label for="registro_id">Seleccione un Registro:</label>
+        <select name="id" id="registro_id" onchange="mostrarInformacion()">
+            <option value="">--Seleccione un registro--</option>
+            {% for registro in registros %}
+                <option value="{{ registro[0] }}" data-info="Fecha: {{ registro[1] }}, Finca: {{ registro[2] }}, Tallos: {{ registro[3] }}">ID: {{ registro[0] }}</option>
+            {% endfor %}
+        </select>
+        <div id="infoRegistro">
+        </div>
+        <br>
+        <input type="submit" value="Borrar">
+    </form>
+</body>
+</html>

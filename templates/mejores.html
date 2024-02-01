@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Mejores Fincas</title>
+</head>
+<body>
+    <h1>Seleccionar Filtros</h1>
+
+    <form method="post" action="/ver_mejores_fincas">
+        <label for="fecha_inicio">Seleccione mes de inicio:</label>
+        <select name="fecha_inicio">
+            <option value="2024-01">2024-01</option>
+            <option value="2024-02">2024-02</option>
+            <option value="2024-03">2024-03</option>
+            <option value="2024-04">2024-04</option>
+            <option value="2024-05">2024-05</option>
+            <option value="2024-06">2024-06</option>
+            <option value="2024-07">2024-07</option>
+            <option value="2024-08">2024-08</option>
+            <option value="2024-09">2024-09</option>
+            <option value="2024-10">2024-10</option>
+            <option value="2024-11">2024-11</option>
+            <option value="2024-12">2024-12</option>
+        </select>
+
+        <label for="fecha_fin">Seleccione mes de fin:</label>
+        <select name="fecha_fin">
+            <option value="2024-01">2024-01</option>
+            <option value="2024-02">2024-02</option>
+            <option value="2024-03">2024-03</option>
+            <option value="2024-04">2024-04</option>
+            <option value="2024-05">2024-05</option>
+            <option value="2024-06">2024-06</option>
+            <option value="2024-07">2024-07</option>
+            <option value="2024-08">2024-08</option>
+            <option value="2024-09">2024-09</option>
+            <option value="2024-10">2024-10</option>
+            <option value="2024-11">2024-11</option>
+            <option value="2024-12">2024-12</option>
+        </select>
+
+        <label for="finca">Seleccione finca:</label>
+        <select id="finca" name="finca">
+            <option value="TESSA">TESSA</option>
+            <option value="TESSA3">TESSA3</option>
+            <option value="POSITANO">POSITANO</option>
+            <option value="EC1">EC1</option>
+            <option value="EC2">EC2</option>
+            <option value="DALI">DALI</option>
+            <option value="ARCOFLOR">ARCOFLOR</option>
+        </select>
+
+        <input type="submit" value="Ver mejores fincas">
+    </form>
+
+    <h2>Información de la Finca</h2>
+
+    {% if nombre_finca %}
+        <p>Nombre de la Finca: {{ nombre_finca }}</p>
+        <p>Promedio de Cumplimiento: {{ promedio_cumplimiento }}</p>
+    {% else %}
+        <p>No se encontraron resultados para la finca seleccionada.</p>
+    {% endif %}
+</body>
+</html>

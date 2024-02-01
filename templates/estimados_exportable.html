@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimados Exportable</title>
+</head>
+<body>
+
+    <h1>Estimados Exportable</h1>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mes</th>
+                    <th>Finca</th>
+                    <th>Estimados Tallos Exp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for estimado in estimados_data %}
+                    <tr>
+                        <td>{{ estimado.mes }}</td>
+                        <td>{{ estimado.finca }}</td>
+                        <td>{{ estimado.estimados_tallos_exp }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+</body>
+</html>

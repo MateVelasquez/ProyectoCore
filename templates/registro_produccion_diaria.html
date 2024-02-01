@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Producción Diaria</title>
+</head>
+<body>
+    <h2>Formulario de Registro de Producción Diaria</h2>
+    <form action="/registro_produccion_diaria" method="post">
+       
+        <label for="fecha_registro">Fecha de Registro:</label><br>
+        <input type="date" id="fecha_registro" name="fecha_registro" required><br>
+
+        <label for="cedula">Cédula:</label><br>
+        <input type="number" id="cedula" name="cedula" required><br>
+        
+        <label for="finca">Finca:</label><br>
+        <select id="finca" name="finca">
+            <option value="TESSA">TESSA</option>
+            <option value="TESSA3">TESSA3</option>
+            <option value="POSITANO">POSITANO</option>
+            <option value="EC1">EC1</option>
+            <option value="EC2">EC2</option>
+            <option value="DALI">DALI</option>
+            <option value="ARCOFLOR">ARCOFLOR</option>
+        </select><br>
+        
+        <label for="tallos">Tallos:</label><br>
+        <input type="number" id="tallos" name="tallos" required><br>
+        
+        <input type="submit" value="Registrar">
+    </form>
+    <form action="/login" method="get">
+        <input type="submit" value="Cerrar Sesión">
+    </form>
+</body>
+</html>

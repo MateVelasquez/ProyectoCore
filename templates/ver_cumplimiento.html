@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Cumplimiento de Producción</title>
+    <script>
+        function recargarPagina() {
+            setInterval(function() {
+                window.location.reload();
+            }, 7500); 
+        }
+    </script>
+</head>
+<body onload="recargarPagina()">
+    <h2>Cumplimiento de Producción</h2>
+    <table border="1">
+        <tr>
+            <th>Mes</th>
+            <th>Finca</th>
+            <th>Tallos</th>
+            <th>Estimados Tallos Exp</th>
+            <th>Cumplimiento</th>
+        </tr>
+        {% for cumplimiento in cumplimientos %}
+        <tr>
+            <td>{{ cumplimiento.mes }}</td>
+            <td>{{ cumplimiento.finca }}</td>
+            <td>{{ cumplimiento.tallos }}</td>
+            <td>{{ cumplimiento.estimados_tallos_exp }}</td>
+            <td>{{ cumplimiento.cumplimiento }} %</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
